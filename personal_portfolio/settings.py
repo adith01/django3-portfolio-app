@@ -11,9 +11,9 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'p@4z#o9wfh0$gh!f8)fl$vlh%6ts_vnj)q1j8hkzjgw8u_^-3f'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
-ALLOWED_HOSTS = ['*']
+ALLOWED_HOSTS = ['adithjaison.pythonanywhere.com']
 
 # Application definition
 
@@ -61,23 +61,32 @@ WSGI_APPLICATION = 'personal_portfolio.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/3.1/ref/settings/#databases
 
-DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
-    }
-}
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'django.db.backends.sqlite3',
+#         'NAME': BASE_DIR / 'db.sqlite3',
+#     }
+# }
 
 # DATABASES = {
 #     'default': {
 #         'ENGINE': 'django.db.backends.mysql',
-#         'NAME': 'portfolioblog',
-#         'USER': 'root',
-#         'PASSWORD': 'root',
-#         'HOST': 'localhost',
+#         'NAME': 'adithJaison$portfolio',
+#         'USER': 'adithJaison',
+#         'PASSWORD': 'mysqlroot123',
+#         'HOST': 'adithJaison.mysql.pythonanywhere-services.com',
 #         'PORT': '3306',
 #     }
 # }
+DATABASES = {
+'default': {
+'ENGINE': 'django.db.backends.mysql',
+'NAME': 'adithJaison$test',
+'USER': 'adithJaison',
+'PASSWORD': 'mysqlroot123',
+'HOST': 'adithJaison.mysql.pythonanywhere-services.com',
+}
+}
 # Password validation
 # https://docs.djangoproject.com/en/3.1/ref/settings/#auth-password-validators
 
@@ -113,5 +122,6 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/3.1/howto/static-files/
 
 STATIC_URL = '/static/'
+STATIC_ROOT = os.path.join(BASE_DIR, 'static')
 MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
