@@ -5,7 +5,7 @@ from .models import Blog
 def all_blogs(request):
     blogsLen = Blog.objects.all()
     length = len(blogsLen)
-    blogs = Blog.objects.order_by('-date')[:2]
+    blogs = Blog.objects.order_by('-date')
     return render(request, 'blog/all_blogs.html', {'blogs': blogs, 'length': length})
 
 

@@ -1,0 +1,18 @@
+{% extends 'blog/base.html' %}
+{% block content %}
+
+
+
+    <h1> Blog</h1>
+    <!--<h2>Adith'2 Writtern {{ length }} Blogs</h2>-->
+    <h2>Adith has writtern {{ blogs.count }} Blog{{ blogs.count|pluralize }}</h2>
+    {% for blog in blogs %}
+    <a href="{% url 'blog:detail' blog.id %}"><h3>{{ blog.title }}</h3></a>
+    <h4> {{ blog.date|date:'M d Y'|upper }}</h4>
+    <!--<p>{{ blog.description|safe|truncatechars:100 }}</p>-->
+    <p>{{ blog.description|striptags|truncatechars:100 }}</p>
+    {% endfor %}
+
+
+
+{% endblock %}
