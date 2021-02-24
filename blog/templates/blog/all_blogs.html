@@ -6,9 +6,9 @@
 </head>
 <body>
 <h1> Blog</h1>
-
+<h2>Adith'2 Writtern {{ length }} Blogs</h2>
 {% for blog in blogs %}
-<h3>{{ blog.title }}</h3>
+<a href="{% url 'blog:detail' blog.id %}"><h3>{{ blog.title }}</h3></a>
 <h4> {{ blog.date }}</h4>
 <p>{{ blog.description }}</p>
 {% endfor %}
