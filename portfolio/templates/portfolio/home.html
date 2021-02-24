@@ -5,6 +5,15 @@
     <title>Title</title>
 </head>
 <body>
-<h1>This is my portfolio</h1>
+<h1>Adith's Portfolio</h1>
+{% for project in projects %}
+<h2>{{ project.title }}</h2>
+<h3>{{ project.description }}</h3>
+<img src="{{ project.image.url}}" height="360" width="340">
+{% if project.url %}
+<br><a href="{{ project.url }}">Link</a>
+{% endif %}
+{% endfor %}
+
 </body>
 </html>
